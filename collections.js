@@ -21,5 +21,5 @@ There will also be an Updates collection, which will hold all of the updates acr
 */
 
 
-Posts = new Meteor.collection("posts");
-Updates = new Meteor.collection("updates");
+Posts = new Meteor.Collection("posts");
+Updates = new Meteor.Collection("updates");
