@@ -1,4 +1,3 @@
-/*
 
 // Routes & global view template events
 
@@ -36,4 +35,3 @@ Template.nav.events({
   }
 
 });
-*/
