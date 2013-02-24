@@ -3,5 +3,57 @@
 @import "base"
 @import "settings"
 
+.container
+  width: 88%
+  margin: 0 auto
+  .half-container
+    width: 50%
+
+
+header, #main-content, footer
+  margin-top: 1em
+  margin-bottom: 1em
+
+// Header
+header nav
+  position: relative
+  ul
+    margin: 0
+    padding: 0
+    width: 80%
+    @extend .clearfix
+    li
+      display: block
+      float: left
+  #login-buttons
+    position: absolute
+    top: 0
+    right: 0
+  #login-buttons, li
+    padding: .5em 1em
+
+// Footer
+footer > .container
+  @extend .clearfix
+  padding-top: 1em
+  .half-container
+    float: left
+    h4, > a
+      margin: 0 0 1em
+  ul
+    width: 50%
+    float: right
+    margin: 0
+    padding: 0
+    li
+      padding: 0 0 .5em
+    
+// Account UI override
+.accounts-dialog
+  width: 15em
+
+// Main Content
+#main-content
+
 
 @import "breakpoints"

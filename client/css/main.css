@@ -1,4 +1,3 @@
-@import "http://get.pictos.cc/fonts/3780/1";
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
@@ -192,7 +191,7 @@ code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 /*
@@ -326,7 +325,7 @@ form {
  */
 /* line 366, ../../tests/sass/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -481,3 +480,73 @@ table {
 /* line 9, ../../tests/sass/_base.scss */
 body {
   -webkit-font-smoothing: antialiased; }
+
+/* line 13, ../../tests/sass/_base.scss */
+.clearfix, header nav ul, footer > .container {
+  zoom: 1; }
+  /* line 15, ../../tests/sass/_base.scss */
+  .clearfix:before, header nav ul:before, footer > .container:before, .clearfix:after, header nav ul:after, footer > .container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  /* line 21, ../../tests/sass/_base.scss */
+  .clearfix:after, header nav ul:after, footer > .container:after {
+    clear: both; }
+
+/* line 6, ../../tests/sass/main.sass */
+.container {
+  width: 88%;
+  margin: 0 auto; }
+  /* line 9, ../../tests/sass/main.sass */
+  .container .half-container {
+    width: 50%; }
+
+/* line 13, ../../tests/sass/main.sass */
+header, #main-content, footer {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+/* line 18, ../../tests/sass/main.sass */
+header nav {
+  position: relative; }
+  /* line 20, ../../tests/sass/main.sass */
+  header nav ul {
+    margin: 0;
+    padding: 0;
+    width: 80%; }
+    /* line 25, ../../tests/sass/main.sass */
+    header nav ul li {
+      display: block;
+      float: left; }
+  /* line 28, ../../tests/sass/main.sass */
+  header nav #login-buttons {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  /* line 32, ../../tests/sass/main.sass */
+  header nav #login-buttons, header nav li {
+    padding: 0.5em 1em; }
+
+/* line 36, ../../tests/sass/main.sass */
+footer > .container {
+  padding-top: 1em; }
+  /* line 39, ../../tests/sass/main.sass */
+  footer > .container .half-container {
+    float: left; }
+    /* line 41, ../../tests/sass/main.sass */
+    footer > .container .half-container h4, footer > .container .half-container > a {
+      margin: 0 0 1em; }
+  /* line 43, ../../tests/sass/main.sass */
+  footer > .container ul {
+    width: 50%;
+    float: right;
+    margin: 0;
+    padding: 0; }
+    /* line 48, ../../tests/sass/main.sass */
+    footer > .container ul li {
+      padding: 0 0 0.5em; }
+
+/* line 52, ../../tests/sass/main.sass */
+.accounts-dialog {
+  width: 15em; }

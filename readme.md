@@ -2,4 +2,4 @@
 
 Meteor test app that is basically a live blogging platform.
 
-stay tuned.
+stay tuned. run with `mrt` on command line.
