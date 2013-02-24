@@ -1,4 +1,5 @@
 
+
 // Routes & global view template events
 
 // Watch our collections
@@ -35,3 +36,4 @@ Template.nav.events({
   }
 
 });
+

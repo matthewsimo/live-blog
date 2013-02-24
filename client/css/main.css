@@ -496,7 +496,7 @@ body {
 
 /* line 6, ../../tests/sass/main.sass */
 .container {
-  width: 88%;
+  width: 80%;
   margin: 0 auto; }
   /* line 9, ../../tests/sass/main.sass */
   .container .half-container {
@@ -550,3 +550,7 @@ footer > .container {
 /* line 52, ../../tests/sass/main.sass */
 .accounts-dialog {
   width: 15em; }
+
+/* line 56, ../../tests/sass/main.sass */
+#main-content {
+  min-height: 25em; }
