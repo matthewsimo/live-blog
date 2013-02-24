@@ -16,11 +16,8 @@ $max-text-width:800px;
 $body-text-size:17px;
 $spacing:70px;
 
-// Typography
-@import "http://get.pictos.cc/fonts/3780/1";
-$icon-font:"Pictos Custom";
 $body-font:"Helvetica Neue", helvetica, sans-serif;
-$heading-font:"Lodgecode";
+$heading-font:"Helvetica Neue", helvetica, sans-serif;
 
 @mixin gradient() {
   background:mix(#282b35, #31353f);
