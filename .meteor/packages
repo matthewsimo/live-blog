@@ -6,10 +6,6 @@
 preserve-inputs
 accounts-ui
 accounts-password
-accounts-facebook
-accounts-twitter
-accounts-google
-accounts-github
 underscore
 backbone
 spiderable
