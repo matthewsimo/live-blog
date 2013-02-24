@@ -1,0 +1,36 @@
+// Colors
+$color-news:#53bc8e;
+$color-podcasts:#59a8ce;
+$color-video:#71619a;
+$color-opinions:#e2617c;
+$color-reviews:#f49069;
+$color-interviews:#d4c560;
+$color-conferences:#8c6a61;
+$color-lightgray:#98969d;
+$color-darkgray:#31353f;
+$accent:null;
+
+// Layout
+$max-content-width:940px;
+$max-text-width:800px;
+$body-text-size:17px;
+$spacing:70px;
+
+// Typography
+@import "http://get.pictos.cc/fonts/3780/1";
+$icon-font:"Pictos Custom";
+$body-font:"Helvetica Neue", helvetica, sans-serif;
+$heading-font:"Lodgecode";
+
+@mixin gradient() {
+  background:mix(#282b35, #31353f);
+  @include background(linear-gradient(#282b35, #31353f));
+}
+
+@mixin shadow() {
+  border:1px solid #ddd;
+  border-bottom-width:2px;
+  border:0 solid rgba(0,0,0,0);
+  box-shadow:0 0 0 1px rgba(0,0,0,.05),
+             0 1px 3px rgba(0,0,0,.3);
+}
