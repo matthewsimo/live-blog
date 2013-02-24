@@ -502,55 +502,80 @@ body {
   .container .half-container {
     width: 50%; }
 
-/* line 13, ../../tests/sass/main.sass */
+/* line 12, ../../tests/sass/main.sass */
+.warning {
+  padding-top: 5em;
+  margin: 0 auto;
+  text-align: center; }
+
+/* line 17, ../../tests/sass/main.sass */
 header, #main-content, footer {
   margin-top: 1em;
   margin-bottom: 1em; }
 
-/* line 18, ../../tests/sass/main.sass */
+/* line 22, ../../tests/sass/main.sass */
 header nav {
   position: relative; }
-  /* line 20, ../../tests/sass/main.sass */
+  /* line 24, ../../tests/sass/main.sass */
   header nav ul {
     margin: 0;
     padding: 0;
     width: 80%; }
-    /* line 25, ../../tests/sass/main.sass */
+    /* line 29, ../../tests/sass/main.sass */
     header nav ul li {
       display: block;
       float: left; }
-  /* line 28, ../../tests/sass/main.sass */
+  /* line 32, ../../tests/sass/main.sass */
   header nav #login-buttons {
     position: absolute;
     top: 0;
     right: 0; }
-  /* line 32, ../../tests/sass/main.sass */
+  /* line 36, ../../tests/sass/main.sass */
   header nav #login-buttons, header nav li {
     padding: 0.5em 1em; }
 
-/* line 36, ../../tests/sass/main.sass */
+/* line 40, ../../tests/sass/main.sass */
 footer > .container {
   padding-top: 1em; }
-  /* line 39, ../../tests/sass/main.sass */
+  /* line 43, ../../tests/sass/main.sass */
   footer > .container .half-container {
     float: left; }
-    /* line 41, ../../tests/sass/main.sass */
+    /* line 45, ../../tests/sass/main.sass */
     footer > .container .half-container h4, footer > .container .half-container > a {
       margin: 0 0 1em; }
-  /* line 43, ../../tests/sass/main.sass */
+  /* line 47, ../../tests/sass/main.sass */
   footer > .container ul {
     width: 50%;
     float: right;
     margin: 0;
     padding: 0; }
-    /* line 48, ../../tests/sass/main.sass */
+    /* line 52, ../../tests/sass/main.sass */
     footer > .container ul li {
       padding: 0 0 0.5em; }
 
-/* line 52, ../../tests/sass/main.sass */
+/* line 56, ../../tests/sass/main.sass */
 .accounts-dialog {
   width: 15em; }
 
-/* line 56, ../../tests/sass/main.sass */
+/* line 60, ../../tests/sass/main.sass */
 #main-content {
   min-height: 25em; }
+
+/* line 65, ../../tests/sass/main.sass */
+#new-post {
+  width: 75%; }
+  /* line 67, ../../tests/sass/main.sass */
+  #new-post label, #new-post input, #new-post textarea {
+    width: 100%;
+    margin: 0 0 1em;
+    padding: 0.2em;
+    display: block; }
+  /* line 72, ../../tests/sass/main.sass */
+  #new-post label {
+    margin: 0; }
+  /* line 74, ../../tests/sass/main.sass */
+  #new-post textarea {
+    min-height: 8em; }
+  /* line 76, ../../tests/sass/main.sass */
+  #new-post input[type='submit'] {
+    width: 10em; }

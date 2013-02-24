@@ -2,4 +2,22 @@
 
   <p>list of posts</p>
 
+  {{#if posts}}
+    <ul>
+      {{#each posts}}
+        <li>
+          <h3><a href="/posts/{{this.slug}}">{{this.name}}</a></h3>
+          <p>Created {{this.creation_time}} ago, last updated {{this.revision_time}} ago. </p>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <h3>No posts at the moment!</h3>
+    {{#if currentUser}}
+      <p><a href="/posts/new">Make one</a></p>
+    {{else}}
+      <p>Sign in to make one!</p>
+    {{/if}}
+  {{/if}}
+
 </template>
