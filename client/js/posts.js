@@ -5,3 +5,28 @@ Template.posts.posts = function(){
   else
     return false; 
 };
+
+
+Template.posts_new.events({
+  'click #post-submit': function(e){
+    e.preventDefault();
+    var $title = $('#new-post input#post-title'),
+        $content = $('#new-post textarea'),
+        errors;
+
+    if(!$title.attr('value')) {
+      $title.addClass('error');
+    }
+
+    if(!$content.attr('value')) {
+      $content.addClass('error');
+    }
+    
+      
+  },
+
+  'focus #new-post .error': function(e){
+    $(e.srcElement).removeClass('error');
+  }
+
+});

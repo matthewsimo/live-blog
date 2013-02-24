@@ -14,6 +14,18 @@
   margin: 0 auto
   text-align: center
 
+.error
+  color: #F44
+  border: 1px solid #F44
+  background: #FFEEEE
+  
+
+input, textarea
+  @include border-radius(.2em)
+  border: 1px solid #333
+  padding: .4em
+
+
 header, #main-content, footer
   margin-top: 1em
   margin-bottom: 1em
@@ -67,7 +79,6 @@ footer > .container
   label, input, textarea
     width: 100%
     margin: 0 0 1em
-    padding: .2em
     display: block
   label
     margin: 0
