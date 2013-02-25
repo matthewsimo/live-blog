@@ -22,4 +22,32 @@ There will also be an Updates collection, which will hold all of the updates acr
 
 
 Posts = new Meteor.Collection("posts");
+
+Posts.allow({
+  insert: function() {
+    return false;
+  },
+  update: function(userId, post) {
+    if (userId && _.indexOf(post.autors, userId) !== -1)
+      return true;
+  },
+  remove: function() {
+    if (userId && _.indexOf(post.autors, userId) !== -1)
+      return true;
+  }
+});
+
 Updates = new Meteor.Collection("updates");
+
+Updates.allow({
+  insert: function() {
+    return false;
+  },
+  update: function(){
+    return false;
+  },
+  remove: function() {
+    return false;
+  }
+});
+
