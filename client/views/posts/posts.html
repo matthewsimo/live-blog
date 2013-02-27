@@ -1,12 +1,10 @@
 <template name="posts">
 
-  <p>list of posts</p>
-
   {{#if posts}}
     <ul>
       {{#each posts}}
         <li>
-          <h3><a href="/posts/{{this.slug}}">{{this.name}}</a></h3>
+          <h3><a href="/posts/{{this.post_slug}}">{{this.title}}</a></h3>
           <p>Created {{this.creation_time}} ago, last updated {{this.revision_time}} ago. </p>
         </li>
       {{/each}}

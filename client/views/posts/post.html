@@ -1,0 +1,27 @@
+<template name="post">
+
+
+  <h2>{{ post.title }}</h2>
+  <div class="post-meta">
+    <p clas="authors">
+      {{#each post.authors }}
+        {{ this }}
+      {{/each }}
+    </p>
+    <p class="time">
+      Created at: <span class="creation">{{ post.creation_time }}</span>
+    </p>
+    {{#if post.revision_time }}
+    <p class="time">
+      Last revised at: <span class="revision">{{ post.revision_time }}</span>
+    </p>
+    {{/if}}
+  </div>
+
+  <div class="post-updates">
+
+    {{> updates }}
+
+  </div>
+
+</template>

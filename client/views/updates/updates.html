@@ -1,0 +1,24 @@
+<template name="updates">
+
+  {{#if updates }}
+
+    <ul class="updates-list">
+    {{#each updates}}
+
+      <li id="update-{{ this._id }}">
+        {{ this.content }} 
+        <footer>
+          <p>By {{ this.author }} at {{ this.creation_time }}</p>
+        </footer>
+      </li>
+
+    {{/each}}
+    </ul>
+
+  {{else}}
+
+    <div class="warning">Currently no updates, stay tuned!</div>
+
+  {{/if}}
+
+</template>

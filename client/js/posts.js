@@ -1,3 +1,11 @@
+Meteor.startup(function() {
+
+  Session.setDefault('post_slug', false);
+  Session.setDefault('isAuthor', false);
+
+});
+
+
 Template.posts.posts = function(){
   var allPosts = Posts.find({}, {sort: {name: 1}})
   if (allPosts.count() > 0)
@@ -9,6 +17,9 @@ Template.posts.posts = function(){
 
 Template.posts_new.events({
   'submit #new-post': function(e){
+
+    e.preventDefault();
+
     var $title = $('#new-post input#post-title'),
         $content = $('#new-post textarea'),
         title = $title.attr('value'),
@@ -37,14 +48,32 @@ Template.posts_new.events({
       // Make a nice slug based on title
       var slug = title.toLowerCase().replace(/[\s_]/g, '-').replace(/[^-a-zA-Z0-9]/g, '');
 
-      Meteor.call('createNewPost', {
-        title: title, 
-        slug: slug,
-        authors: userId
-      });
+      Meteor.call('post_insert', 
+        { title: title, slug: slug, author: userId}, 
+        function(err, data) {
+          if(err) 
+            console.log(err);
+
+          console.log("Post insert data: " + data);
+
+          // We've added a new post, let's add the content now.
+          Meteor.call('update_insert',
+            data,
+            { content: content, author: userId},
+            function(err, data) {
+              if(err) 
+                console.log(err);
+
+              console.log("Update insert data: " + data);
+            }
+          );
+          Meteor.Router.to('/posts/' + slug);
+        }
+      );
+
+
     }
 
-    e.preventDefault();
   },
 
   'focus #new-post .error': function(e){
@@ -52,3 +81,12 @@ Template.posts_new.events({
   }
 
 });
+
+
+Template.post.post = function() {
+  var post = Session.get('post_slug');
+  post = Posts.findOne({post_slug: post});
+  return post;
+};
+
+

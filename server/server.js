@@ -5,7 +5,7 @@ Meteor.publish('posts', function() {
 
 // Publish all updates for requested post_id
 Meteor.publish('updates', function(post_id) {
-  return Updates.find({post_id: post_id}, {sort: {creation_time: 1}});
+  return Updates.find({post_id: post_id}, {sort: {creation_time: -1}});
 });
 
 Meteor.startup(function () {
@@ -13,30 +13,67 @@ Meteor.startup(function () {
 });
 
 Meteor.methods({
-  'createNewPost' : function (options) {
+  // Handle inserts on new post items
+  'post_insert' : function (options) {
     var date = new Date();
 
     if (typeof options.title === 'string' && options.title.length !== 0 && 
         typeof options.slug  === 'string' && options.slug.length  !== 0 && 
-        options.userId) {
+        options.author) {
 
-      postID = Posts.insert({
+      return Posts.insert({
         title: options.title,
         post_slug: options.slug,
-        authors: [options.userId],
+        authors: [options.author],
         creation_time: date,
         revision_time: '',
       });
 
-      updateID = Updates.insert({
-        content: options.content,
-        post_id: postId,
-        author: options.userId,
-        creation_time: date,
-      });
-
-      return {postid: postID, updateid: updateID};
     }
   },
+  // Handle updates to post items
+  'post_update': function(id, options) {
+
+    var date = new Date();
+
+    return Posts.update({
+      _id: id
+    }, {
+      $set: {
+        title: options.title,
+        post_slug: options.slug,
+        authors: [options.userId],
+        revisions_time: date,
+      }
+    });
+  },
+  // Handle inserts to new update items
+  'update_insert': function (postID, options) {
+    var date = new Date();
+
+    if(typeof options.content === 'string' && options.content.length !== 0 &&
+       postID !== undefined) {
+
+      return Updates.insert({
+        content: options.content,
+        post_id: postID,
+        author: options.author,
+        creation_time: date,
+      });
+    }
+
+  },
+  // Handle updates to update items
+  'update_update': function(id, options) {
+
+    return Posts.update({
+      _id: id
+    }, {
+      $set: {
+        content: options.content
+      }
+    });
+  },
+
 });
 
